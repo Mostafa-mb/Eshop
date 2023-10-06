@@ -9,7 +9,7 @@ namespace aspnetcore7
 		{
 			var builder = WebApplication.CreateBuilder(args);
 
-			builder.Services.AddDbContext<AppDbContext>(op => op.UseSqlServer(builder.Configuration.GetConnectionString("AppDbContext"));
+			builder.Services.AddDbContext<AppDbContext>(op => op.UseSqlServer(builder.Configuration.GetConnectionString("AppDbContext")));
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
