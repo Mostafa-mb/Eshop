@@ -1,3 +1,6 @@
+using aspnetcore7.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace aspnetcore7
 {
 	public class Program
@@ -5,6 +8,8 @@ namespace aspnetcore7
 		public static void Main(string[] args)
 		{
 			var builder = WebApplication.CreateBuilder(args);
+
+			builder.Services.AddDbContext<AppDbContext>(op => op.UseSqlServer(builder.Configuration.GetConnectionString("AppDbContext"));
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
