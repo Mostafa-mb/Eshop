@@ -13,7 +13,7 @@ namespace aspnetcore7.Services
 			this.context = context;
 		}
 
-		public async Task<List<Category>> GetList()
+		public async Task<List<Category>> GetListAsync()
 		{
 			return await context.Category.ToListAsync();
 		}
