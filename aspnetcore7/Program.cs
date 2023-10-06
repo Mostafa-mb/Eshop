@@ -1,4 +1,5 @@
 using aspnetcore7.Data;
+using aspnetcore7.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace aspnetcore7
@@ -13,6 +14,7 @@ namespace aspnetcore7
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
+			builder.Services.AddScoped<CategoryServices>();
 
 			var app = builder.Build();
 
