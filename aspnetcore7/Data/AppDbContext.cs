@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using aspnetcore7.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace aspnetcore7.Data
 {
@@ -9,5 +10,8 @@ namespace aspnetcore7.Data
         {
             
         }
+
+        public DbSet<Category> Category { get; set; }
+
     }
 }
