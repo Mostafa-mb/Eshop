@@ -27,7 +27,17 @@ namespace aspnetcore7.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Create(Category category)
 		{
-			await Service.Create(category);
+			if (category.Name.Length < 3)
+			{
+				ModelState.AddModelError("Name", "عنوان دسته بندی باید بیشتر از 3 کلمه باشد.");
+			}
+
+			if (ModelState.IsValid)
+			{
+				await Service.Create(category);
+				RedirectToAction("Index");
+			}
+
 			return View(category);
 		}
 	}
