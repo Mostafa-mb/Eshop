@@ -29,7 +29,11 @@ namespace aspnetcore7.Controllers
 		{
 			if (Product.Name.Length < 3)
 			{
-				ModelState.AddModelError("Name", "عنوان دسته بندی باید بیشتر از 3 کلمه باشد.");
+				ModelState.AddModelError("Name", "عنوان محصول باید بیشتر از 3 حرف باشد");
+			}
+			if (Product.CategoryId <= 0)
+			{
+				ModelState.AddModelError("CategoryId", "ثبت دسته بندی در محصول اجباری است");
 			}
 
 			if (ModelState.IsValid)
