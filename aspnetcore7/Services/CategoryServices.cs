@@ -18,6 +18,11 @@ namespace aspnetcore7.Services
 			return await context.Category.ToListAsync();
 		}
 		
+		public async Task<Category> GetAsync(int id)
+		{
+			return await context.Category.SingleOrDefaultAsync(e => e.Id == id);
+		}
+		
 		public async Task<Category> Create(Category category)
 		{
 			context.Add(category);

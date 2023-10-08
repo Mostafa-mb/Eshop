@@ -1,6 +1,7 @@
 ﻿using aspnetcore7.Models;
 using aspnetcore7.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.SqlServer.Update.Internal;
 
 namespace aspnetcore7.Controllers
 {
@@ -38,6 +39,12 @@ namespace aspnetcore7.Controllers
 				RedirectToAction("Index");
 			}
 
+			return View(category);
+		}
+
+		public async Task<IActionResult> Details (int id)
+		{
+			var category = Service.GetAsync(id);
 			return View(category);
 		}
 	}
