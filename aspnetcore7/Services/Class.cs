@@ -4,10 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace aspnetcore7.Services
 {
-	public class Class
+
+	public class ProductServices
 	{
-		public class ProductServices
-		{
 			private readonly AppDbContext context;
 
 			public ProductServices(AppDbContext context)
@@ -27,6 +26,6 @@ namespace aspnetcore7.Services
 				return Product;
 			}
 
-		}
 	}
+
 }
